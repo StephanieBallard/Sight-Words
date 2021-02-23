@@ -62,8 +62,8 @@ class SightWordsMainViewController: UIViewController {
     // MARK: - LifeCycle Functions -
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureUI()
         configureHierarchy()
+        configureUI()
         configureDataSource()
         collectionView.delegate = self
     }
@@ -89,6 +89,11 @@ class SightWordsMainViewController: UIViewController {
         
         collectionViewContainer.anchor(top: underLineUIView.bottomAnchor, left: view.safeAreaLayoutGuide.leftAnchor, right: view.safeAreaLayoutGuide.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingRight: 20, width: 300, height: 150)
         
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.centerXAnchor.constraint(equalTo: collectionViewContainer.centerXAnchor).isActive = true
+        collectionView.centerYAnchor.constraint(equalTo: collectionViewContainer.centerYAnchor).isActive = true
+        collectionView.setDimensions(height: 150, width: 300)
+        
         UIHelper.configureShadow(view: sightWordsTextLabel, color: UIColor.white.cgColor)
     }
     
@@ -106,10 +111,8 @@ class SightWordsMainViewController: UIViewController {
 
 extension SightWordsMainViewController {
     private func configureHierarchy() {
-        collectionView = UICollectionView(frame: .init(origin: CGPoint(x: 42, y: 380), size: CGSize(width: 300, height: 150)), collectionViewLayout: createLayout())
-//        collectionView = UICollectionView(frame: .init(origin: collectionViewContainer.center, size: CGSize(width: 300, height: 150)), collectionViewLayout: createLayout())
-//        collectionView = UICollectionView(frame: .init(origin: collectionViewContainer.frame.origin, size: CGSize(width: 300, height: 150)), collectionViewLayout: createLayout())
-        view.addSubview(collectionView)
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
+        collectionViewContainer.addSubview(collectionView)
         collectionView.backgroundColor = #colorLiteral(red: 0.5843137255, green: 0.2784313725, blue: 0.9254901961, alpha: 1)
         collectionView.isScrollEnabled = false
         collectionView.layer.borderColor = #colorLiteral(red: 0.5836093415, green: 0.279776614, blue: 0.9270977454, alpha: 1).cgColor
@@ -119,7 +122,6 @@ extension SightWordsMainViewController {
         let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, SetOfWords> { (cell: UICollectionViewListCell, indexPath: IndexPath, identifier: SetOfWords) in
             var content = cell.defaultContentConfiguration()
             content.text = identifier.name
-            content.textProperties.font = UIFont(name: "Futura", size: 24)!
             content.textProperties.font = UIFont.boldSystemFont(ofSize: 24)
             content.textProperties.alignment = .center
             content.textProperties.color = #colorLiteral(red: 0.5843137255, green: 0.2784313725, blue: 0.9254901961, alpha: 1)
@@ -142,7 +144,6 @@ extension SightWordsMainViewController {
             return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: identifier)
         }
         
-        // initial data
         var snapshot = NSDiffableDataSourceSnapshot<Section, SetOfWords>()
         snapshot.appendSections([.main])
         snapshot.appendItems(wordSets, toSection: .main)
@@ -155,7 +156,6 @@ extension SightWordsMainViewController: UICollectionViewDelegate {
         let setOfWords = dataSource.itemIdentifier(for: indexPath)
         let wordsDetailViewController = WordsDetailViewController()
         wordsDetailViewController.setOfWords = setOfWords
-//        navigationController?.show(wordsDetailViewController, sender: nil)
         present(wordsDetailViewController, animated: true, completion: nil)
         
     }
