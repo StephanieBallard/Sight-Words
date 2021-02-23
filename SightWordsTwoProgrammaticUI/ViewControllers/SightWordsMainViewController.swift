@@ -53,6 +53,12 @@ class SightWordsMainViewController: UIViewController {
         return uiView
     }()
     
+    private let collectionViewContainer: UIView = {
+        let uiView = UIView()
+        uiView.backgroundColor = .clear
+        return uiView
+    }()
+    
     // MARK: - LifeCycle Functions -
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +72,7 @@ class SightWordsMainViewController: UIViewController {
     private func configureUI() {
         navigationController?.navigationBar.isHidden = true
         
-        view.addSubviews(subviews: curveView, sightWordsTextLabel, directionsTextLabel, comeBackTextLabel, underLineUIView)
+        view.addSubviews(subviews: curveView, sightWordsTextLabel, directionsTextLabel, comeBackTextLabel, underLineUIView, collectionViewContainer)
 
         view.backgroundColor = #colorLiteral(red: 0.09803921569, green: 0.8196078431, blue: 1, alpha: 1)
         
@@ -80,6 +86,8 @@ class SightWordsMainViewController: UIViewController {
         comeBackTextLabel.anchor(top: directionsTextLabel.bottomAnchor, left: view.safeAreaLayoutGuide.leftAnchor, right: view.rightAnchor, paddingTop: 8, paddingLeft: 20, paddingRight: 20, height: 25)
         
         underLineUIView.anchor(top: comeBackTextLabel.bottomAnchor, left: comeBackTextLabel.safeAreaLayoutGuide.leftAnchor, right: comeBackTextLabel.safeAreaLayoutGuide.rightAnchor, paddingTop: 6, paddingLeft: 20, paddingRight: 20, height: 2)
+        
+        collectionViewContainer.anchor(top: underLineUIView.bottomAnchor, left: view.safeAreaLayoutGuide.leftAnchor, right: view.safeAreaLayoutGuide.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingRight: 20, width: 300, height: 150)
         
         UIHelper.configureShadow(view: sightWordsTextLabel, color: UIColor.white.cgColor)
     }
@@ -99,6 +107,8 @@ class SightWordsMainViewController: UIViewController {
 extension SightWordsMainViewController {
     private func configureHierarchy() {
         collectionView = UICollectionView(frame: .init(origin: CGPoint(x: 42, y: 380), size: CGSize(width: 300, height: 150)), collectionViewLayout: createLayout())
+//        collectionView = UICollectionView(frame: .init(origin: collectionViewContainer.center, size: CGSize(width: 300, height: 150)), collectionViewLayout: createLayout())
+//        collectionView = UICollectionView(frame: .init(origin: collectionViewContainer.frame.origin, size: CGSize(width: 300, height: 150)), collectionViewLayout: createLayout())
         view.addSubview(collectionView)
         collectionView.backgroundColor = #colorLiteral(red: 0.5843137255, green: 0.2784313725, blue: 0.9254901961, alpha: 1)
         collectionView.isScrollEnabled = false

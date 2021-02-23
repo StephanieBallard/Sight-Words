@@ -45,13 +45,13 @@ class WordsDetailViewController: UIViewController {
     private let nextButton: UIButton = {
         let button = UIButton()
         button.setTitle("Next", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Futura", size: 26.0)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
+        button.setTitleShadowColor(.white, for: .normal)
         button.layer.cornerRadius = 12.0
         button.layer.borderWidth = 2.0
         button.layer.borderColor = UIColor.white.cgColor
         button.layer.backgroundColor = #colorLiteral(red: 0.09803921569, green: 0.8196078431, blue: 1, alpha: 1)
         button.setTitleColor(#colorLiteral(red: 0.5843137255, green: 0.2784313725, blue: 0.9254901961, alpha: 1), for: .normal)
-        button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline).withSize(22)
         button.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -93,7 +93,7 @@ class WordsDetailViewController: UIViewController {
         wordTextLabel.anchor(top: setNumberTextLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 30, paddingLeft: 20, paddingRight: 20, width: 100, height: 100)
         wordTextLabel.text = setOfWords?.words[0].lowercased()
         
-        nextButton.anchor(top: wordTextLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 50, paddingLeft: 50, paddingRight: 50, width: 150, height: 50)
+        nextButton.anchor(top: wordTextLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 50, paddingLeft: 70, paddingRight: 70, height: 50)
         
         UIHelper.configureShadow(view: sightWordsTextLabel, color: UIColor.white.cgColor)
     }
