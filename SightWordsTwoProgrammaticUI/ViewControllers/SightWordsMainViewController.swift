@@ -76,6 +76,8 @@ class SightWordsMainViewController: UIViewController {
 
         view.backgroundColor = #colorLiteral(red: 0.09803921569, green: 0.8196078431, blue: 1, alpha: 1)
         
+//        view.traitCollection.
+        
         curveView.backgroundColor = #colorLiteral(red: 0.09803921569, green: 0.8196078431, blue: 1, alpha: 1)
         curveView.anchor(left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, height: UIScreen.main.bounds.height * 0.8)
         
@@ -107,6 +109,10 @@ class SightWordsMainViewController: UIViewController {
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
     }
+    
+//    private override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+//        <#code#>
+//    }
 }
 
 extension SightWordsMainViewController {

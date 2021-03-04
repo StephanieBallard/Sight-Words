@@ -70,11 +70,14 @@ class WordsDetailViewController: UIViewController {
         } else {
             index += 1
         }
-        
         wordTextLabel.text = setOfWords?.words[index].lowercased()
+        
+        if index == 29 {
+            alert()
+        }
     }
     
-    // MARK: - Helper Method -
+    // MARK: - Helper Methods -
     func configureUI() {
         navigationController?.navigationBar.isHidden = true
         
@@ -87,7 +90,7 @@ class WordsDetailViewController: UIViewController {
         
         sightWordsTextLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.safeAreaLayoutGuide.leftAnchor, right: view.safeAreaLayoutGuide.rightAnchor, paddingTop: 50, paddingLeft: 40, paddingRight: 40, height: 80)
         
-        setNumberTextLabel.anchor(top: sightWordsTextLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 130, paddingLeft: 20, paddingRight: 20, height: 25)
+        setNumberTextLabel.anchor(top: sightWordsTextLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 200, paddingLeft: 20, paddingRight: 20, height: 25)
         setNumberTextLabel.text = setOfWords?.name
         
         wordTextLabel.anchor(top: setNumberTextLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 30, paddingLeft: 20, paddingRight: 20, width: 100, height: 100)
@@ -96,5 +99,11 @@ class WordsDetailViewController: UIViewController {
         nextButton.anchor(top: wordTextLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 50, paddingLeft: 70, paddingRight: 70, height: 50)
         
         UIHelper.configureShadow(view: sightWordsTextLabel, color: UIColor.white.cgColor)
+    }
+    
+    func alert() {
+        let alert = UIAlertController(title: "Congratulations!", message: "You finished this set!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Keep Going!", style: .default, handler: nil))
+        present(alert, animated: true)
     }
 }

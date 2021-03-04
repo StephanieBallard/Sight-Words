@@ -21,10 +21,10 @@ let setFour = SetOfWords(name: "Set Four", words: four)
 let setFive = SetOfWords(name: "Set Five", words: five)
 let setSix = SetOfWords(name: "Set Six", words: six)
 
-let one = ["A", "After", "Again", "All", "Am", "An", "And", "Any", "Are", "As", "Ask", "At", "Ate", "Away", "Be", "One", "Open", "Our", "Out", "Over", "Play", "Please", "Pretty", "Put", "Ran", "Red", "Ride", "Round", "Run", "Said"]
-let two = ["Big", "Blue", "Brown", "But", "By", "Came", "Can", "Come", "Could", "Did", "Do", "Down", "Eat", "Every", "Find", "Purple", "Say", "See", "She", "So", "Some", "Soon", "Stop", "Take", "Thank", "That", "The", "Them", "Then", "There"]
-let three = ["Black", "Fly", "First", "Four", "From", "Funny", "Get", "Girl", "Go", "Going", "Good", "Had", "Has", "Have", "He", "They", "Think", "This", "Three", "Too", "Two", "Us", "Under", "Up", "Walk", "Want", "Was", "We", "Well", "Went"]
-let four = ["Give","Help", "Her", "Here", "Him", "His", "How", "I", "In", "Into", "Is", "It", "Jump", "Just", "Know", "Let", "Like", "Too", "Were", "What", "When", "Where", "White", "Who", "Will", "With", "Yellow", "Yes", "You", "Young"]
-let five = ["About", "Boy", "Been", "Before", "Best", "Bye", "Call", "Cat", "Day", "Each", "Girl", "Green", "Little", "Low", "Make", "Many", "More", "Night", "No", "Now", "Not", "Off", "Old", "Orange", "Pink", "Saw", "Than", "Their", "When", "Which"]
-let six = ["Animal", "Bad", "Car", "Dog", "Eye", "Family", "Fast", "For", "Friend", "High", "House", "Keep", "Live", "Look", "Make", "Me", "Must", "Of", "On", "Own", "Part", "School", "Should", "Slow", "Start", "Talk", "Thing", "To", "Would", "Year"]
+let one = ["A", "I", "Am", "An", "As", "At", "Be", "By", "Do", "So", "Go", "He", "Us", "Up", "We", "In", "Is", "It", "No", "Me", "Of", "On", "To", "All", "And", "Any", "Are", "Ask", "Ate", "One"]
+let two = ["Our", "Out", "Put", "Ran", "Red", "Run", "Big", "But", "Can", "Did", "Eat", "Say", "See", "She", "The", "Fly", "Get", "Had", "Has", "Too", "Two", "Was", "Her", "Him", "His", "How", "Let", "Too", "Who", "Yes"]
+let three = ["You", "Boy", "Bye", "Cat", "Day", "Low", "Now", "Not", "Off", "Old", "Saw", "Bad", "Car", "Dog", "Eye", "For", "Own", "Away", "Open", "Over", "Play", "Ride", "Said", "Blue", "Came", "Come", "Down", "Find", "Some", "Soon"]
+let four = ["Stop", "Take", "That", "Them", "Then", "Four", "From", "Girl", "Good", "Have", "They", "This", "Walk", "Want", "Well", "Went", "Give", "Help", "Here", "Into", "Jump", "Just", "Know", "Like", "Were", "What", "When", "Will", "With", "Been"]
+let five = ["Best", "Call", "Each", "Girl", "Make", "Many", "More", "Pink", "Than", "When", "Fast", "High", "Keep", "Live", "Look", "Make", "Must", "Part", "Slow", "Talk", "Year", "After", "Again", "Round", "Brown", "Could", "Every", "Thank", "There", "Black"]
+let six = ["First", "Funny", "Going", "Think", "Three", "Under", "Where", "White", "Young", "About", "Green", "Night", "Their", "Which", "House", "Start", "Thing", "Would", "Please", "Pretty", "Purple", "Yellow", "Before", "Little", "Orange", "Animal", "Family", "Friend", "School", "Should"]
 
