@@ -1,6 +1,6 @@
 # Learn Sight Words Quickly
 
-<p> Thank you for downloading Learn Sight Words Quickly! This app includes 180 kindergartn and first great sight words. No need to unlock the content individually! All words are included!
+<p> Thank you for downloading Learn Sight Words Quickly! This app includes 180 kindergarten and first grade sight words. No need to unlock the content individually! All words are included! None of your personal information will be collected. A privacy policy is included as required by the App Store.
 
 <h1>Privacy Policy</h1>
 <p>Last updated: June 16, 2021</p>
