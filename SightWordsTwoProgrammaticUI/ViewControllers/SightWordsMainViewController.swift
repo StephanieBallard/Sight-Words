@@ -17,7 +17,8 @@ class SightWordsMainViewController: UIViewController {
     // MARK: - Properties -
     let curveView = CurveView()
     var dataSource: UICollectionViewDiffableDataSource<Section, SetOfWords>! = nil
-    var collectionView: UICollectionView! = nil
+    var collectionView: UICollectionView!
+    
     
     // MARK: - Text Labels -
     private let sightWordsTextLabel: UILabel = {
